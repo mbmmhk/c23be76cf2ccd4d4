@@ -1,0 +1,141 @@
+{
+    "code": "1",
+    "data":
+    [
+        {
+            "id": 1,
+            "name": "BTC",
+            "price":
+            {
+                "usd": 88047.57,
+                "eur": 79242.813
+            },
+            "tags":
+            [
+                "withdrawal",
+                "deposit"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "ETH",
+            "price":
+            {
+                "usd": 3233.41,
+                "eur": 2910.069
+            },
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "DOGE",
+            "price":
+            {
+                "usd": 0.39,
+                "eur": 0.351
+            },
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "BNB",
+            "price":
+            {
+                "usd": 614.96,
+                "eur": 553.464
+            },
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "XRP",
+            "price":
+            {
+                "usd": 0.68,
+                "eur": 0.612
+            },
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "LTC",
+            "price":
+            {
+                "usd": 74.94,
+                "eur": 67.446
+            },
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "AVAX",
+            "price":
+            {
+                "usd": 32.99,
+                "eur": 29.691
+            },
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "ATOM",
+            "price":
+            {
+                "usd": 5.56,
+                "eur": 5.004
+            },
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 23,
+            "name": "EOS",
+            "price":
+            {
+                "usd": 0.57,
+                "eur": 0.513
+            },
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 49,
+            "name": "DYDX",
+            "price":
+            {
+                "usd": 2.5,
+                "eur": 2.25
+            },
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        }
+    ]
+}

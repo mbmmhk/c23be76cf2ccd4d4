@@ -1,0 +1,473 @@
+{
+    "code": "1",
+    "data":
+    [
+        {
+            "id": 1,
+            "name": "BTC",
+            "usd": 88047.57,
+            "tags":
+            [
+                "withdrawal",
+                "deposit"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "ETH",
+            "usd": 3233.41,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "USDT",
+            "usd": 1.00,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "BNB",
+            "usd": 614.96,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "XRP",
+            "usd": 0.68,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "ADA",
+            "usd": 0.55,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "DOGE",
+            "usd": 0.39,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "SOL",
+            "usd": 207.04,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "DOT",
+            "usd": 5.17,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "SHIB",
+            "usd": 0.00003,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 11,
+            "name": "LTC",
+            "usd": 74.94,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 12,
+            "name": "TRX",
+            "usd": 0.18,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 13,
+            "name": "AVAX",
+            "usd": 32.99,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 14,
+            "name": "UNI",
+            "usd": 8.69,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 15,
+            "name": "LINK",
+            "usd": 13.66,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 16,
+            "name": "XLM",
+            "usd": 0.13,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 17,
+            "name": "ATOM",
+            "usd": 5.56,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 18,
+            "name": "XMR",
+            "usd": 148.12,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 19,
+            "name": "ALGO",
+            "usd": 0.16,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 20,
+            "name": "VET",
+            "usd": 0.03,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 21,
+            "name": "FIL",
+            "usd": 4.10,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 22,
+            "name": "THETA",
+            "usd": 1.53,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 23,
+            "name": "EOS",
+            "usd": 0.57,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 24,
+            "name": "AAVE",
+            "usd": 176.16,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 25,
+            "name": "MKR",
+            "usd": 1528.37,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 26,
+            "name": "NEO",
+            "usd": 12.58,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 27,
+            "name": "KSM",
+            "usd": 25.67,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 28,
+            "name": "DASH",
+            "usd": 45.89,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 29,
+            "name": "ZEC",
+            "usd": 60.12,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 30,
+            "name": "COMP",
+            "usd": 200.45,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 31,
+            "name": "YFI",
+            "usd": 30000.00,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 32,
+            "name": "SUSHI",
+            "usd": 10.23,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 33,
+            "name": "SNX",
+            "usd": 9.87,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 34,
+            "name": "ZRX",
+            "usd": 0.75,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 35,
+            "name": "BAT",
+            "usd": 0.45,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 36,
+            "name": "ENJ",
+            "usd": 1.50,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 37,
+            "name": "MANA",
+            "usd": 0.80,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 38,
+            "name": "GRT",
+            "usd": 0.20,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 39,
+            "name": "1INCH",
+            "usd": 2.50,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 40,
+            "name": "CHZ",
+            "usd": 0.25,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 41,
+            "name": "STORJ",
+            "usd": 1.45,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 42,
+            "name": "QNT",
+            "usd": 135.56,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 43,
+            "name": "GALA",
+            "usd": 0.04,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 44,
+            "name": "APE",
+            "usd": 4.60,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 45,
+            "name": "RUNE",
+            "usd": 2.30,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 46,
+            "name": "FTM",
+            "usd": 0.56,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 47,
+            "name": "HNT",
+            "usd": 1.80,
+            "tags":
+            [
+                "deposit"
+            ]
+        },
+        {
+            "id": 48,
+            "name": "CAKE",
+            "usd": 3.40,
+            "tags":
+            [
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 49,
+            "name": "DYDX",
+            "usd": 2.50,
+            "tags":
+            [
+                "deposit",
+                "withdrawal"
+            ]
+        },
+        {
+            "id": 50,
+            "name": "LRC",
+            "usd": 0.32,
+            "tags":
+            [
+                "deposit"
+            ]
+        }
+    ]
+}
