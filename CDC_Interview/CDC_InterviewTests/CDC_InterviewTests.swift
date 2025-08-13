@@ -45,7 +45,7 @@ final class CDC_InterviewTests: XCTestCase {
         
         dep.register(FeatureFlagProvider.self) { _ in
             let provider = FeatureFlagProvider()
-            provider.update(falg: .supportEUR, newValue: false)
+            provider.update(flag: .supportEUR, newValue: false)
             return provider
         }
         

@@ -19,7 +19,7 @@ struct SettingView: View {
 class SettingModel: ObservableObject {
     @Published var supportEUR: Bool = false {
         didSet {
-            featureFlagProvider.update(falg: .supportEUR, newValue: supportEUR)
+            featureFlagProvider.update(flag: .supportEUR, newValue: supportEUR)
         }
     }
     
@@ -27,7 +27,7 @@ class SettingModel: ObservableObject {
     
     init() {
         self.featureFlagProvider = Dependency.shared.resolve(FeatureFlagProvider.self)!
-        self.supportEUR = self.featureFlagProvider.getValue(falg: .supportEUR)
+        self.supportEUR = self.featureFlagProvider.getValue(flag: .supportEUR)
     }
 }
 

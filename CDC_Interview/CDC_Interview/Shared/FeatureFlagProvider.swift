@@ -14,19 +14,19 @@ class FeatureFlagProvider {
         ]
     )
     
-    func observeFlagValue(falg: FeatureFlagType) -> Observable<Bool> {
+    func observeFlagValue(flag: FeatureFlagType) -> Observable<Bool> {
         flagsRelay.map {
-            $0[falg] ?? false
+            $0[flag] ?? false
         }
     }
-    
-    func getValue(falg: FeatureFlagType) -> Bool {
-        flagsRelay.value[falg] ?? false
+
+    func getValue(flag: FeatureFlagType) -> Bool {
+        flagsRelay.value[flag] ?? false
     }
-    
-    func update(falg: FeatureFlagType, newValue: Bool) {
+
+    func update(flag: FeatureFlagType, newValue: Bool) {
         var existing = flagsRelay.value
-        existing[falg] = newValue
+        existing[flag] = newValue
         flagsRelay.accept(existing)
     }
 }
