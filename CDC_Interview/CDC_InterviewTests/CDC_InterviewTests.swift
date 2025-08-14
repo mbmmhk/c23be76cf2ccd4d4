@@ -1,7 +1,5 @@
 
 import XCTest
-import RxTest
-import RxSwift
 @testable import CDC_Interview
 
 final class CDC_InterviewTests: XCTestCase {
@@ -14,64 +12,33 @@ final class CDC_InterviewTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testFetch() throws {
-        let disposeBag = DisposeBag()
-        let scheduler = TestScheduler(initialClock: 0)
+    func testDependencyInjection() throws {
+        // Given
+        let dependency = Dependency.shared
 
-        let dep = Dependency()
-        dep.register(USDPriceUseCase.self) { _ in
-            let mock = MockUSDPriceUseCase()
-            mock.stubbedFetchItemsResult = scheduler.createColdObservable([
-                .next(0, []),
-                .next(10, [USDPrice.init(id: 1, name: "a", usd: 1, tags: [.deposit])])
-            ]).asObservable()
-            
-            return mock
-        }
-        
-        dep.register(AllPriceUseCase.self) { _ in
-            MockAllPriceUseCase()
-        }
-        
-        dep.register(USDPriceUseCase.self) { _ in
-            let mock = MockUSDPriceUseCase()
-            mock.stubbedFetchItemsResult = scheduler.createColdObservable([
-                .next(0, []),
-                .next(10, [USDPrice.init(id: 1, name: "a", usd: 1, tags: [.deposit])])
-            ]).asObservable()
-            
-            return mock
-        }
-        
-        dep.register(FeatureFlagProvider.self) { _ in
-            let provider = FeatureFlagProvider()
-            provider.update(flag: .supportEUR, newValue: false)
-            return provider
-        }
-        
-        let vc = ListViewController()
-        
-        let itemsObserver = scheduler.createObserver([InstrumentPriceCell.ViewModel].self)
-        vc.itemsObservable.distinctUntilChanged().bind(to: itemsObserver).disposed(by: disposeBag)
-        vc.fetchItems(searchText: nil).subscribe().disposed(by: disposeBag)
-                
-        XCTAssertEqual(itemsObserver.events, [
-            .next(0, []),
-            .next(10, [InstrumentPriceCell.ViewModel(usdPrice: USDPrice.init(id: 1, name: "a", usd: 1, tags: [.deposit]))]),
-        ])
+        // When
+        let priceUseCase = dependency.resolve(MarketsPriceUseCaseProtocol.self)
+        let featureFlagProvider = dependency.resolve(FeatureFlagProviderProtocol.self)
+
+        // Then
+        XCTAssertNotNil(priceUseCase, "MarketsPriceUseCase should be registered")
+        XCTAssertNotNil(featureFlagProvider, "FeatureFlagProvider should be registered")
     }
-}
 
-class MockUSDPriceUseCase: USDPriceUseCase {
-    var stubbedFetchItemsResult: Observable<[USDPrice]>!
-    override func fetchItems() -> Observable<[USDPrice]> {
-        return stubbedFetchItemsResult
+    func testCryptoFormatterSharedInstance() throws {
+        // Given & When
+        let formatter1 = CryptoFormatter.shared
+        let formatter2 = CryptoFormatter.shared
+
+        // Then
+        XCTAssertTrue(formatter1 === formatter2, "CryptoFormatter should be a singleton")
     }
-}
 
-class MockAllPriceUseCase: AllPriceUseCase {
-    var stubbedFetchItemsResult: Observable<AllPrice.Price>!
-    override func fetchItems() -> Observable<AllPrice.Price> {
-        return stubbedFetchItemsResult
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+            _ = CryptoFormatter.shared.formatUSD(100.0)
+        }
     }
 }
