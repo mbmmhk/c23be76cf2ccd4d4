@@ -11,8 +11,17 @@ struct SettingView: View {
     @StateObject var viewModel: SettingViewModel = .init()
 
     var body: some View {
-        NavigationView {
+        VStack(alignment: .leading, spacing: 0) {
+            // Custom large title
             Form {
+                HStack {
+                    Text("Settings")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding(.top, 20)
+                        .padding(.bottom, 10)
+                }
+                
                 Section {
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
@@ -27,16 +36,16 @@ struct SettingView: View {
                             .labelsHidden()
                     }
                     .padding(.vertical, 4)
+                    .listRowBackground(Color.clear)
                 } header: {
                     Text("Currency Settings")
                 } footer: {
                     Text("When enabled, EUR prices will be shown in addition to USD prices in the cryptocurrency list.")
                 }
             }
-            .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.large)
+            .scrollContentBackground(.hidden)
+            .background(Color.clear)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
