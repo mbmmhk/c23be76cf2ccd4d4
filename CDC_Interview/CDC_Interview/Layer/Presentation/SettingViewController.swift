@@ -23,10 +23,10 @@ class SettingModel: ObservableObject {
         }
     }
     
-    let featureFlagProvider: FeatureFlagProvider
-    
+    let featureFlagProvider: FeatureFlagProviderProtocol
+
     init() {
-        self.featureFlagProvider = Dependency.shared.resolve(FeatureFlagProvider.self)!
+        self.featureFlagProvider = Dependency.shared.resolve(FeatureFlagProviderProtocol.self)!
         self.supportEUR = self.featureFlagProvider.getValue(flag: .supportEUR)
     }
 }
