@@ -1,5 +1,5 @@
 //
-//  AllPriceUseCaseTests.swift
+//  MarketsPriceUseCaseTests.swift
 //  CDC_InterviewTests
 //
 //  Created by Junjie Gu on 2025/8/14.
@@ -10,11 +10,11 @@ import RxSwift
 import RxTest
 @testable import CDC_Interview
 
-final class AllPriceUseCaseTests: XCTestCase {
+final class MarketsPriceUseCaseTests: XCTestCase {
 
     // MARK: - Properties
 
-    private var sut: AllPriceUseCase!
+    private var sut: MarketsPriceUseCase!
     private var mockRepository: MockMarketsRepository!
     private var disposeBag: DisposeBag!
     private var testScheduler: TestScheduler!
@@ -24,7 +24,7 @@ final class AllPriceUseCaseTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         mockRepository = MockMarketsRepository()
-        sut = AllPriceUseCase(repository: mockRepository)
+        sut = MarketsPriceUseCase(repository: mockRepository)
         disposeBag = DisposeBag()
         testScheduler = TestScheduler(initialClock: 0)
     }
@@ -39,65 +39,64 @@ final class AllPriceUseCaseTests: XCTestCase {
 
     // MARK: - async/await Tests
 
-    func testFetchItemsAsync_Success_ReturnsCorrectData() async throws {
+    func testFetchUSDPricesAsync_Success_ReturnsCorrectData() async throws {
         // Given
-        let expectedPrices = createMockAllPrices()
-        mockRepository.mockAllPricesResult = .success(expectedPrices)
+        let expectedPrices = createMockUSDPrices()
+        mockRepository.mockUSDPricesResult = .success(expectedPrices)
 
         // When
-        let result = try await sut.fetchItemsAsync()
+        let result = try await sut.fetchUSDPricesAsync()
 
         // Then
         XCTAssertEqual(result.count, expectedPrices.count)
         XCTAssertEqual(result.first?.id, expectedPrices.first?.id)
         XCTAssertEqual(result.first?.name, expectedPrices.first?.name)
-        XCTAssertEqual(result.first?.price.usd, expectedPrices.first?.price.usd)
-        XCTAssertEqual(result.first?.price.eur, expectedPrices.first?.price.eur)
+        XCTAssertEqual(result.first?.usd, expectedPrices.first?.usd)
         XCTAssertEqual(result.first?.tags, expectedPrices.first?.tags)
-        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+        XCTAssertEqual(mockRepository.fetchUSDPricesCallCount, 1)
     }
 
-    func testFetchItemsAsync_EmptyData_ReturnsEmptyArray() async throws {
+    func testFetchUSDPricesAsync_EmptyData_ReturnsEmptyArray() async throws {
         // Given
-        mockRepository.mockAllPricesResult = .success([])
+        mockRepository.mockUSDPricesResult = .success([])
 
         // When
-        let result = try await sut.fetchItemsAsync()
+        let result = try await sut.fetchUSDPricesAsync()
 
         // Then
         XCTAssertTrue(result.isEmpty)
-        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+        XCTAssertEqual(mockRepository.fetchUSDPricesCallCount, 1)
     }
 
-    func testFetchItemsAsync_RepositoryError_ThrowsError() async {
+    func testFetchUSDPricesAsync_RepositoryError_ThrowsError() async {
         // Given
         let expectedError = TestError.networkError
-        mockRepository.mockAllPricesResult = .failure(expectedError)
+        mockRepository.mockUSDPricesResult = .failure(expectedError)
 
         // When & Then
         do {
-            _ = try await sut.fetchItemsAsync()
+            _ = try await sut.fetchUSDPricesAsync()
             XCTFail("Expected error to be thrown")
         } catch {
             XCTAssertTrue(error is TestError)
             XCTAssertEqual(error as? TestError, expectedError)
         }
-        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+        XCTAssertEqual(mockRepository.fetchUSDPricesCallCount, 1)
     }
 
     // MARK: - RxSwift Observable Tests
 
-    func testFetchItems_Success_EmitsCorrectData() {
+    func testFetchUSDPrices_Success_EmitsCorrectData() {
         // Given
-        let expectedPrices = createMockAllPrices()
-        mockRepository.mockAllPricesResult = .success(expectedPrices)
+        let expectedPrices = createMockUSDPrices()
+        mockRepository.mockUSDPricesResult = .success(expectedPrices)
 
-        var receivedResult: [AllPrice.Price]?
+        var receivedResult: [USDPrice.Price]?
         var receivedError: Error?
         let expectation = XCTestExpectation(description: "Fetch items completes")
 
         // When
-        sut.fetchItems()
+        sut.fetchUSDPrices()
             .subscribe(
                 onNext: { result in
                     receivedResult = result
@@ -120,22 +119,21 @@ final class AllPriceUseCaseTests: XCTestCase {
         XCTAssertEqual(receivedResult?.count, expectedPrices.count)
         XCTAssertEqual(receivedResult?.first?.id, expectedPrices.first?.id)
         XCTAssertEqual(receivedResult?.first?.name, expectedPrices.first?.name)
-        XCTAssertEqual(receivedResult?.first?.price.usd, expectedPrices.first?.price.usd)
-        XCTAssertEqual(receivedResult?.first?.price.eur, expectedPrices.first?.price.eur)
+        XCTAssertEqual(receivedResult?.first?.usd, expectedPrices.first?.usd)
         XCTAssertEqual(receivedResult?.first?.tags, expectedPrices.first?.tags)
-        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+        XCTAssertEqual(mockRepository.fetchUSDPricesCallCount, 1)
     }
 
-    func testFetchItems_EmptyData_EmitsEmptyArray() {
+    func testFetchUSDPrices_EmptyData_EmitsEmptyArray() {
         // Given
-        mockRepository.mockAllPricesResult = .success([])
+        mockRepository.mockUSDPricesResult = .success([])
 
-        var receivedResult: [AllPrice.Price]?
+        var receivedResult: [USDPrice.Price]?
         var receivedError: Error?
         let expectation = XCTestExpectation(description: "Fetch items completes")
 
         // When
-        sut.fetchItems()
+        sut.fetchUSDPrices()
             .subscribe(
                 onNext: { result in
                     receivedResult = result
@@ -156,20 +154,20 @@ final class AllPriceUseCaseTests: XCTestCase {
         XCTAssertNil(receivedError)
         XCTAssertNotNil(receivedResult)
         XCTAssertTrue(receivedResult?.isEmpty ?? false)
-        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+        XCTAssertEqual(mockRepository.fetchUSDPricesCallCount, 1)
     }
 
-    func testFetchItems_RepositoryError_EmitsError() {
+    func testFetchUSDPrices_RepositoryError_EmitsError() {
         // Given
         let expectedError = TestError.networkError
-        mockRepository.mockAllPricesResult = .failure(expectedError)
+        mockRepository.mockUSDPricesResult = .failure(expectedError)
 
-        var receivedResult: [AllPrice.Price]?
+        var receivedResult: [USDPrice.Price]?
         var receivedError: Error?
         let expectation = XCTestExpectation(description: "Fetch items completes")
 
         // When
-        sut.fetchItems()
+        sut.fetchUSDPrices()
             .subscribe(
                 onNext: { result in
                     receivedResult = result
@@ -191,24 +189,15 @@ final class AllPriceUseCaseTests: XCTestCase {
         XCTAssertNotNil(receivedError)
         XCTAssertTrue(receivedError is TestError)
         XCTAssertEqual(receivedError as? TestError, expectedError)
-        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+        XCTAssertEqual(mockRepository.fetchUSDPricesCallCount, 1)
     }
 
-    // MARK: - Singleton Tests
 
-    func testSharedInstance_ReturnsSameInstance() {
-        // Given & When
-        let instance1 = AllPriceUseCase.shared
-        let instance2 = AllPriceUseCase.shared
-
-        // Then
-        XCTAssertTrue(instance1 === instance2)
-    }
 }
 
 // MARK: - Test Helper Classes
 
-/// Mock repository for testing AllPriceUseCase
+/// Mock repository for testing USDPriceUseCase
 private class MockMarketsRepository: MarketsRepositoryProtocol {
 
     // MARK: - Mock Properties
@@ -268,16 +257,83 @@ private enum TestError: Error, Equatable {
 
 // MARK: - Test Data Helpers
 
-private extension AllPriceUseCaseTests {
+private extension MarketsPriceUseCaseTests {
 
-    func createMockAllPrices() -> [AllPrice.Price] {
+    func createMockUSDPrices() -> [USDPrice.Price] {
+        return [
+            USDPrice.Price(
+                id: 1,
+                name: "Bitcoin",
+                usd: Decimal(45000.50),
+                tags: [Tag.deposit]
+            ),
+            USDPrice.Price(
+                id: 2,
+                name: "Ethereum",
+                usd: Decimal(3200.75),
+                tags: [Tag.withdrawal]
+            ),
+            USDPrice.Price(
+                id: 3,
+                name: "Cardano",
+                usd: Decimal(1.25),
+                tags: [Tag.deposit, Tag.withdrawal]
+            )
+        ]
+    }
+
+    // MARK: - AllPrice Tests
+
+    func testFetchAllPricesAsync_Success_ReturnsCorrectData() async throws {
+        // Given
+        let expectedPrices = createMockAllPrices()
+        mockRepository.mockAllPricesResult = .success(expectedPrices)
+
+        // When
+        let result = try await sut.fetchAllPricesAsync()
+
+        // Then
+        XCTAssertEqual(result.count, expectedPrices.count)
+        XCTAssertEqual(result.first?.price.usd, expectedPrices.first?.price.usd)
+        XCTAssertEqual(result.first?.price.eur, expectedPrices.first?.price.eur)
+        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+    }
+
+    func testFetchAllPrices_Success_EmitsCorrectData() {
+        // Given
+        let expectedPrices = createMockAllPrices()
+        mockRepository.mockAllPricesResult = .success(expectedPrices)
+
+        var receivedResult: [AllPrice.Price]?
+        let expectation = XCTestExpectation(description: "Fetch all prices completes")
+
+        // When
+        sut.fetchAllPrices()
+            .subscribe(
+                onNext: { result in
+                    receivedResult = result
+                    expectation.fulfill()
+                }
+            )
+            .disposed(by: disposeBag)
+
+        // Then
+        wait(for: [expectation], timeout: 1.0)
+        XCTAssertNotNil(receivedResult)
+        XCTAssertEqual(receivedResult?.count, expectedPrices.count)
+        XCTAssertEqual(receivedResult?.first?.price.usd, expectedPrices.first?.price.usd)
+        XCTAssertEqual(receivedResult?.first?.price.eur, expectedPrices.first?.price.eur)
+        XCTAssertEqual(mockRepository.fetchAllPricesCallCount, 1)
+    }
+
+    private func createMockAllPrices() -> [AllPrice.Price] {
         return [
             AllPrice.Price(
                 id: 1,
                 name: "Bitcoin",
                 price: AllPrice.Price.PriceRecord(
-                    usd: Decimal(45000.50),
-                    eur: Decimal(38000.25)
+                    usd: Decimal(50000.00),
+                    eur: Decimal(42000.00)
                 ),
                 tags: [Tag.deposit]
             ),
@@ -286,18 +342,9 @@ private extension AllPriceUseCaseTests {
                 name: "Ethereum",
                 price: AllPrice.Price.PriceRecord(
                     usd: Decimal(3200.75),
-                    eur: Decimal(2700.60)
+                    eur: Decimal(2700.50)
                 ),
                 tags: [Tag.withdrawal]
-            ),
-            AllPrice.Price(
-                id: 3,
-                name: "Cardano",
-                price: AllPrice.Price.PriceRecord(
-                    usd: Decimal(1.25),
-                    eur: Decimal(1.05)
-                ),
-                tags: [Tag.deposit, Tag.withdrawal]
             )
         ]
     }
