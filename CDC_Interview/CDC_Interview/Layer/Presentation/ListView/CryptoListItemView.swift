@@ -12,10 +12,11 @@ struct CryptoListItemView: View {
     let displayItem: CryptoListViewModel.DisplayItem
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Text(displayItem.name)
                     .font(.headline)
+                Spacer()
             }
 
             HStack {
@@ -45,7 +46,8 @@ struct CryptoListItemView: View {
                 }
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 8)
+        .padding(.horizontal, 4)
     }
 }
 

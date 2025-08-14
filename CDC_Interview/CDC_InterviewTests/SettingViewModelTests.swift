@@ -65,7 +65,7 @@ final class SettingViewModelTests: XCTestCase {
     @MainActor
     func testInitialization_WithMissingDependency_ShouldFatalError() {
         // Given
-        let emptyDependency = Dependency()
+        let _ = Dependency()
 
         // When & Then
         // Note: We can't directly test fatalError in unit tests

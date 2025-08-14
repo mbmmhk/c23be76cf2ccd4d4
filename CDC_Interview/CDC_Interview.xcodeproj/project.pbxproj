@@ -46,6 +46,13 @@
 		924C4AB22E4D98B30033297F /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AB12E4D98B30033297F /* ListViewModelTests.swift */; };
 		924C4ABD2E4DADB30033297F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ABC2E4DADB30033297F /* SettingViewModel.swift */; };
 		924C4ABF2E4DAF6D0033297F /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ABE2E4DAF6D0033297F /* SettingViewModelTests.swift */; };
+		924C4AC22E4DB25E0033297F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AC12E4DB25E0033297F /* DetailView.swift */; };
+		924C4AC62E4DB2740033297F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AC52E4DB2740033297F /* DetailViewModel.swift */; };
+		924C4AC82E4DB2830033297F /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AC72E4DB2830033297F /* DetailViewModelTests.swift */; };
+		924C4ACE2E4DB9C60033297F /* CryptoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ACD2E4DB9C60033297F /* CryptoListCoordinator.swift */; };
+		924C4AD02E4DB9D10033297F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ACF2E4DB9D10033297F /* AppCoordinator.swift */; };
+		924C4AD22E4DC17A0033297F /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AD12E4DC17A0033297F /* SettingsCoordinator.swift */; };
+		924C4AD42E4DC2300033297F /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AD32E4DC2300033297F /* AppCoordinatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +105,13 @@
 		924C4AB12E4D98B30033297F /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 		924C4ABC2E4DADB30033297F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		924C4ABE2E4DAF6D0033297F /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
+		924C4AC12E4DB25E0033297F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		924C4AC52E4DB2740033297F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		924C4AC72E4DB2830033297F /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		924C4ACD2E4DB9C60033297F /* CryptoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListCoordinator.swift; sourceTree = "<group>"; };
+		924C4ACF2E4DB9D10033297F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		924C4AD12E4DC17A0033297F /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		924C4AD32E4DC2300033297F /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +206,8 @@
 				924C4A962E4D6E880033297F /* DataSourceResourceTests.swift */,
 				924C4A9A2E4D71130033297F /* MarketsPriceUseCaseTests.swift */,
 				924C4ABE2E4DAF6D0033297F /* SettingViewModelTests.swift */,
+				924C4AC72E4DB2830033297F /* DetailViewModelTests.swift */,
+				924C4AD32E4DC2300033297F /* AppCoordinatorTests.swift */,
 			);
 			path = CDC_InterviewTests;
 			sourceTree = "<group>";
@@ -207,6 +223,7 @@
 		924C49D82E4CC0370033297F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				924C4AC02E4DB2560033297F /* DetailView */,
 				924C4ABB2E4DAD850033297F /* SettingView */,
 				924C49E62E4CC4230033297F /* Coordinators */,
 				1F96703D2C939E4D004DB8FD /* ListView */,
@@ -328,6 +345,9 @@
 		924C49E62E4CC4230033297F /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				924C4AD12E4DC17A0033297F /* SettingsCoordinator.swift */,
+				924C4ACD2E4DB9C60033297F /* CryptoListCoordinator.swift */,
+				924C4ACF2E4DB9D10033297F /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -365,6 +385,15 @@
 				924C4ABC2E4DADB30033297F /* SettingViewModel.swift */,
 			);
 			path = SettingView;
+			sourceTree = "<group>";
+		};
+		924C4AC02E4DB2560033297F /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				924C4AC12E4DB25E0033297F /* DetailView.swift */,
+				924C4AC52E4DB2740033297F /* DetailViewModel.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924C4AD22E4DC17A0033297F /* SettingsCoordinator.swift in Sources */,
 				924C4A922E4D66260033297F /* NetworkProviderType.swift in Sources */,
 				924C4AA62E4D7D430033297F /* DataSourceProtocol.swift in Sources */,
 				924C4AA72E4D7D430033297F /* LocalDataSourceProvider.swift in Sources */,
@@ -490,10 +520,14 @@
 				4B9CB95B2CEB26F700279940 /* NumberFormatter.swift in Sources */,
 				1F96700A2C91A7E1004DB8FD /* AppDelegate.swift in Sources */,
 				4B1F48FC2CEDD3F200B7119E /* CryptoListView.swift in Sources */,
+				924C4AC62E4DB2740033297F /* DetailViewModel.swift in Sources */,
 				1F96700C2C91A7E1004DB8FD /* SceneDelegate.swift in Sources */,
+				924C4AC22E4DB25E0033297F /* DetailView.swift in Sources */,
 				924C4AB02E4D90150033297F /* CryptoListItemView.swift in Sources */,
+				924C4AD02E4DB9D10033297F /* AppCoordinator.swift in Sources */,
 				1F96701E2C91A806004DB8FD /* Model.swift in Sources */,
 				1F9670392C931DC1004DB8FD /* MarketsPriceUseCase.swift in Sources */,
+				924C4ACE2E4DB9C60033297F /* CryptoListCoordinator.swift in Sources */,
 				924C4A0C2E4D00950033297F /* MarketsRepositoryProtocol.swift in Sources */,
 				924C4A0E2E4D00A80033297F /* MarketsRepository.swift in Sources */,
 				924C4ABD2E4DADB30033297F /* SettingViewModel.swift in Sources */,
@@ -508,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924C4AC82E4DB2830033297F /* DetailViewModelTests.swift in Sources */,
 				924C4AAC2E4D80930033297F /* FeatureFlagProviderTests.swift in Sources */,
 				924C4A972E4D6E880033297F /* DataSourceResourceTests.swift in Sources */,
 				924C4A992E4D6F1B0033297F /* DataSourceConfigurationTests.swift in Sources */,
@@ -515,6 +550,7 @@
 				924C4A9B2E4D71130033297F /* MarketsPriceUseCaseTests.swift in Sources */,
 				924C49D72E4C89040033297F /* DependencyTests.swift in Sources */,
 				924C4AB22E4D98B30033297F /* ListViewModelTests.swift in Sources */,
+				924C4AD42E4DC2300033297F /* AppCoordinatorTests.swift in Sources */,
 				924C4A122E4D00CD0033297F /* MarketsRepositoryTests.swift in Sources */,
 				1FBEC5A32C940DE300732A9C /* CDC_InterviewTests.swift in Sources */,
 				924C4A0A2E4CED230033297F /* LocalDataProviderTests.swift in Sources */,
