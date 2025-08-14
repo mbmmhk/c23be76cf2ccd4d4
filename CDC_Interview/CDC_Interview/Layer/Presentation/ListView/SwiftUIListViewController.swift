@@ -42,10 +42,10 @@ class ListViewModel: ObservableObject {
 
     private let dependency: Dependency = .shared
     private let useCase: USDPriceUseCase = .shared
-    private let featureFlagProvider: FeatureFlagProvider
+    private let featureFlagProvider: FeatureFlagProviderProtocol
 
     init() {
-        self.featureFlagProvider = dependency.resolve(FeatureFlagProvider.self)!
+        self.featureFlagProvider = dependency.resolve(FeatureFlagProviderProtocol.self)!
     }
 
     func fetchItems() async {

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
         }
         
-        Dependency.shared.register(FeatureFlagProvider.self) { resolver in
+        Dependency.shared.register(FeatureFlagProviderProtocol.self) { resolver in
             return FeatureFlagProvider()
         }
         
