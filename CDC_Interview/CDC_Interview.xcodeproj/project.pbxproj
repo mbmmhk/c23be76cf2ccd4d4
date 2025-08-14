@@ -17,7 +17,7 @@
 		1F9670262C91A8D5004DB8FD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F9670252C91A8D5004DB8FD /* RxSwift */; };
 		1F9670292C91AE12004DB8FD /* usdPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F9670272C91A919004DB8FD /* usdPrices.json */; };
 		1F96702D2C92C073004DB8FD /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96702C2C92C073004DB8FD /* Dependency.swift */; };
-		1F9670352C92C966004DB8FD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9670342C92C965004DB8FD /* SettingViewController.swift */; };
+		1F9670352C92C966004DB8FD /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9670342C92C965004DB8FD /* SettingView.swift */; };
 		1F9670392C931DC1004DB8FD /* MarketsPriceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9670382C931DC0004DB8FD /* MarketsPriceUseCase.swift */; };
 		1F96703B2C931FD3004DB8FD /* FeatureFlagProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96703A2C931FD3004DB8FD /* FeatureFlagProvider.swift */; };
 		1F96703C2C932731004DB8FD /* allPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F9670372C931B8A004DB8FD /* allPrices.json */; };
@@ -44,6 +44,8 @@
 		924C4AAE2E4D8A340033297F /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AAD2E4D8A340033297F /* CryptoListViewModel.swift */; };
 		924C4AB02E4D90150033297F /* CryptoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AAF2E4D90150033297F /* CryptoListItemView.swift */; };
 		924C4AB22E4D98B30033297F /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AB12E4D98B30033297F /* ListViewModelTests.swift */; };
+		924C4ABD2E4DADB30033297F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ABC2E4DADB30033297F /* SettingViewModel.swift */; };
+		924C4ABF2E4DAF6D0033297F /* SettingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ABE2E4DAF6D0033297F /* SettingViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,7 @@
 		1F96701D2C91A806004DB8FD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1F9670272C91A919004DB8FD /* usdPrices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usdPrices.json; sourceTree = "<group>"; };
 		1F96702C2C92C073004DB8FD /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
-		1F9670342C92C965004DB8FD /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1F9670342C92C965004DB8FD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		1F9670362C931640004DB8FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F9670372C931B8A004DB8FD /* allPrices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = allPrices.json; sourceTree = "<group>"; };
 		1F9670382C931DC0004DB8FD /* MarketsPriceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsPriceUseCase.swift; sourceTree = "<group>"; };
@@ -94,6 +96,8 @@
 		924C4AAD2E4D8A340033297F /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
 		924C4AAF2E4D90150033297F /* CryptoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListItemView.swift; sourceTree = "<group>"; };
 		924C4AB12E4D98B30033297F /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		924C4ABC2E4DADB30033297F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		924C4ABE2E4DAF6D0033297F /* SettingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 				924C4A982E4D6F1B0033297F /* DataSourceConfigurationTests.swift */,
 				924C4A962E4D6E880033297F /* DataSourceResourceTests.swift */,
 				924C4A9A2E4D71130033297F /* MarketsPriceUseCaseTests.swift */,
+				924C4ABE2E4DAF6D0033297F /* SettingViewModelTests.swift */,
 			);
 			path = CDC_InterviewTests;
 			sourceTree = "<group>";
@@ -202,9 +207,9 @@
 		924C49D82E4CC0370033297F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				924C4ABB2E4DAD850033297F /* SettingView */,
 				924C49E62E4CC4230033297F /* Coordinators */,
 				1F96703D2C939E4D004DB8FD /* ListView */,
-				1F9670342C92C965004DB8FD /* SettingViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -353,6 +358,15 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
+		924C4ABB2E4DAD850033297F /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				1F9670342C92C965004DB8FD /* SettingView.swift */,
+				924C4ABC2E4DADB30033297F /* SettingViewModel.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,9 +496,10 @@
 				1F9670392C931DC1004DB8FD /* MarketsPriceUseCase.swift in Sources */,
 				924C4A0C2E4D00950033297F /* MarketsRepositoryProtocol.swift in Sources */,
 				924C4A0E2E4D00A80033297F /* MarketsRepository.swift in Sources */,
+				924C4ABD2E4DADB30033297F /* SettingViewModel.swift in Sources */,
 				924C4AAE2E4D8A340033297F /* CryptoListViewModel.swift in Sources */,
 				1F96703B2C931FD3004DB8FD /* FeatureFlagProvider.swift in Sources */,
-				1F9670352C92C966004DB8FD /* SettingViewController.swift in Sources */,
+				1F9670352C92C966004DB8FD /* SettingView.swift in Sources */,
 				1F96702D2C92C073004DB8FD /* Dependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +511,7 @@
 				924C4AAC2E4D80930033297F /* FeatureFlagProviderTests.swift in Sources */,
 				924C4A972E4D6E880033297F /* DataSourceResourceTests.swift in Sources */,
 				924C4A992E4D6F1B0033297F /* DataSourceConfigurationTests.swift in Sources */,
+				924C4ABF2E4DAF6D0033297F /* SettingViewModelTests.swift in Sources */,
 				924C4A9B2E4D71130033297F /* MarketsPriceUseCaseTests.swift in Sources */,
 				924C49D72E4C89040033297F /* DependencyTests.swift in Sources */,
 				924C4AB22E4D98B30033297F /* ListViewModelTests.swift in Sources */,
