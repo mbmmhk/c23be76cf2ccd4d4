@@ -28,6 +28,16 @@
 		4B31FB7D2CE5E7A70007EF72 /* fetchFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B31FB7C2CE5E79A0007EF72 /* fetchFailure.json */; };
 		4B9CB95B2CEB26F700279940 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CB95A2CEB26F300279940 /* NumberFormatter.swift */; };
 		924C49D72E4C89040033297F /* DependencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C49D62E4C89040033297F /* DependencyTests.swift */; };
+		924C4A042E4CE8030033297F /* DataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A032E4CE8030033297F /* DataSourceProtocol.swift */; };
+		924C4A062E4CE80D0033297F /* LocalDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A052E4CE80D0033297F /* LocalDataSourceProvider.swift */; };
+		924C4A0A2E4CED230033297F /* LocalDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A092E4CED230033297F /* LocalDataProviderTests.swift */; };
+		924C4A0C2E4D00950033297F /* MarketsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A0B2E4D00950033297F /* MarketsRepositoryProtocol.swift */; };
+		924C4A0E2E4D00A80033297F /* MarketsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A0D2E4D00A80033297F /* MarketsRepository.swift */; };
+		924C4A102E4D00BB0033297F /* DataSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A0F2E4D00BB0033297F /* DataSourceConfiguration.swift */; };
+		924C4A122E4D00CD0033297F /* MarketsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A112E4D00CD0033297F /* MarketsRepositoryTests.swift */; };
+		924C4A142E4D07680033297F /* DataSourceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A132E4D07680033297F /* DataSourceResource.swift */; };
+		924C4A162E4D08720033297F /* RemoteDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A152E4D08720033297F /* RemoteDataSourceProvider.swift */; };
+		924C4A922E4D66260033297F /* NetworkProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A912E4D66260033297F /* NetworkProviderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +72,16 @@
 		4B31FB7C2CE5E79A0007EF72 /* fetchFailure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fetchFailure.json; sourceTree = "<group>"; };
 		4B9CB95A2CEB26F300279940 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		924C49D62E4C89040033297F /* DependencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyTests.swift; sourceTree = "<group>"; };
+		924C4A032E4CE8030033297F /* DataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceProtocol.swift; sourceTree = "<group>"; };
+		924C4A052E4CE80D0033297F /* LocalDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceProvider.swift; sourceTree = "<group>"; };
+		924C4A092E4CED230033297F /* LocalDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataProviderTests.swift; sourceTree = "<group>"; };
+		924C4A0B2E4D00950033297F /* MarketsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		924C4A0D2E4D00A80033297F /* MarketsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRepository.swift; sourceTree = "<group>"; };
+		924C4A0F2E4D00BB0033297F /* DataSourceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceConfiguration.swift; sourceTree = "<group>"; };
+		924C4A112E4D00CD0033297F /* MarketsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsRepositoryTests.swift; sourceTree = "<group>"; };
+		924C4A132E4D07680033297F /* DataSourceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceResource.swift; sourceTree = "<group>"; };
+		924C4A152E4D08720033297F /* RemoteDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProvider.swift; sourceTree = "<group>"; };
+		924C4A912E4D66260033297F /* NetworkProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +148,7 @@
 			children = (
 				1F96702C2C92C073004DB8FD /* Dependency.swift */,
 				1F96703A2C931FD3004DB8FD /* FeatureFlagProvider.swift */,
+				924C4A912E4D66260033297F /* NetworkProviderType.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -144,7 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				924C49D62E4C89040033297F /* DependencyTests.swift */,
+				924C4A092E4CED230033297F /* LocalDataProviderTests.swift */,
 				1FBEC5A22C940DE300732A9C /* CDC_InterviewTests.swift */,
+				924C4A112E4D00CD0033297F /* MarketsRepositoryTests.swift */,
 			);
 			path = CDC_InterviewTests;
 			sourceTree = "<group>";
@@ -219,6 +242,7 @@
 		924C49DF2E4CC1990033297F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				924C4A0B2E4D00950033297F /* MarketsRepositoryProtocol.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -256,6 +280,11 @@
 		924C49E32E4CC40B0033297F /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				924C4A132E4D07680033297F /* DataSourceResource.swift */,
+				924C4A032E4CE8030033297F /* DataSourceProtocol.swift */,
+				924C4A152E4D08720033297F /* RemoteDataSourceProvider.swift */,
+				924C4A052E4CE80D0033297F /* LocalDataSourceProvider.swift */,
+				924C4A0F2E4D00BB0033297F /* DataSourceConfiguration.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -270,6 +299,7 @@
 		924C49E52E4CC41A0033297F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				924C4A0D2E4D00A80033297F /* MarketsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -395,15 +425,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924C4A042E4CE8030033297F /* DataSourceProtocol.swift in Sources */,
+				924C4A922E4D66260033297F /* NetworkProviderType.swift in Sources */,
 				1F9670332C92C0C3004DB8FD /* AllPriceUseCase.swift in Sources */,
 				4B9CB95B2CEB26F700279940 /* NumberFormatter.swift in Sources */,
 				1F96700A2C91A7E1004DB8FD /* AppDelegate.swift in Sources */,
 				4B1F48FC2CEDD3F200B7119E /* SwiftUIListViewController.swift in Sources */,
 				1F96700C2C91A7E1004DB8FD /* SceneDelegate.swift in Sources */,
+				924C4A142E4D07680033297F /* DataSourceResource.swift in Sources */,
 				1F96701E2C91A806004DB8FD /* Model.swift in Sources */,
+				924C4A102E4D00BB0033297F /* DataSourceConfiguration.swift in Sources */,
 				1F9670392C931DC1004DB8FD /* USDPriceUseCase.swift in Sources */,
+				924C4A162E4D08720033297F /* RemoteDataSourceProvider.swift in Sources */,
+				924C4A0C2E4D00950033297F /* MarketsRepositoryProtocol.swift in Sources */,
+				924C4A0E2E4D00A80033297F /* MarketsRepository.swift in Sources */,
 				1F96703B2C931FD3004DB8FD /* FeatureFlagProvider.swift in Sources */,
 				1F9670352C92C966004DB8FD /* SettingViewController.swift in Sources */,
+				924C4A062E4CE80D0033297F /* LocalDataSourceProvider.swift in Sources */,
 				1F96702D2C92C073004DB8FD /* Dependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +451,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				924C49D72E4C89040033297F /* DependencyTests.swift in Sources */,
+				924C4A122E4D00CD0033297F /* MarketsRepositoryTests.swift in Sources */,
 				1FBEC5A32C940DE300732A9C /* CDC_InterviewTests.swift in Sources */,
+				924C4A0A2E4CED230033297F /* LocalDataProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
