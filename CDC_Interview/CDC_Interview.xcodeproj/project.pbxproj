@@ -23,7 +23,7 @@
 		1F96703C2C932731004DB8FD /* allPrices.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F9670372C931B8A004DB8FD /* allPrices.json */; };
 		1FBEC5A32C940DE300732A9C /* CDC_InterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEC5A22C940DE300732A9C /* CDC_InterviewTests.swift */; };
 		1FBEC5AA2C940E4400732A9C /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 1FBEC5A92C940E4400732A9C /* RxTest */; };
-		4B1F48FC2CEDD3F200B7119E /* SwiftUIListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1F48FB2CEDD3EC00B7119E /* SwiftUIListViewController.swift */; };
+		4B1F48FC2CEDD3F200B7119E /* CryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1F48FB2CEDD3EC00B7119E /* CryptoListView.swift */; };
 		4B31FB7D2CE5E7A70007EF72 /* fetchFailure.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B31FB7C2CE5E79A0007EF72 /* fetchFailure.json */; };
 		4B9CB95B2CEB26F700279940 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9CB95A2CEB26F300279940 /* NumberFormatter.swift */; };
 		924C49D72E4C89040033297F /* DependencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C49D62E4C89040033297F /* DependencyTests.swift */; };
@@ -41,6 +41,9 @@
 		924C4AA92E4D7D430033297F /* RemoteDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AA42E4D7D430033297F /* RemoteDataSourceProvider.swift */; };
 		924C4AAA2E4D7D430033297F /* DataSourceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4A9E2E4D7D430033297F /* DataSourceConfiguration.swift */; };
 		924C4AAC2E4D80930033297F /* FeatureFlagProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AAB2E4D80930033297F /* FeatureFlagProviderTests.swift */; };
+		924C4AAE2E4D8A340033297F /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AAD2E4D8A340033297F /* CryptoListViewModel.swift */; };
+		924C4AB02E4D90150033297F /* CryptoListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AAF2E4D90150033297F /* CryptoListItemView.swift */; };
+		924C4AB22E4D98B30033297F /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AB12E4D98B30033297F /* ListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +73,7 @@
 		1F96703A2C931FD3004DB8FD /* FeatureFlagProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlagProvider.swift; sourceTree = "<group>"; };
 		1FBEC5A02C940DE300732A9C /* CDC_InterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CDC_InterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEC5A22C940DE300732A9C /* CDC_InterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDC_InterviewTests.swift; sourceTree = "<group>"; };
-		4B1F48FB2CEDD3EC00B7119E /* SwiftUIListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListViewController.swift; sourceTree = "<group>"; };
+		4B1F48FB2CEDD3EC00B7119E /* CryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListView.swift; sourceTree = "<group>"; };
 		4B31FB7C2CE5E79A0007EF72 /* fetchFailure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fetchFailure.json; sourceTree = "<group>"; };
 		4B9CB95A2CEB26F300279940 /* NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		924C49D62E4C89040033297F /* DependencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyTests.swift; sourceTree = "<group>"; };
@@ -88,6 +91,9 @@
 		924C4AA32E4D7D430033297F /* LocalDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSourceProvider.swift; sourceTree = "<group>"; };
 		924C4AA42E4D7D430033297F /* RemoteDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceProvider.swift; sourceTree = "<group>"; };
 		924C4AAB2E4D80930033297F /* FeatureFlagProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlagProviderTests.swift; sourceTree = "<group>"; };
+		924C4AAD2E4D8A340033297F /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
+		924C4AAF2E4D90150033297F /* CryptoListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListItemView.swift; sourceTree = "<group>"; };
+		924C4AB12E4D98B30033297F /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +168,9 @@
 		1F96703D2C939E4D004DB8FD /* ListView */ = {
 			isa = PBXGroup;
 			children = (
-				4B1F48FB2CEDD3EC00B7119E /* SwiftUIListViewController.swift */,
+				4B1F48FB2CEDD3EC00B7119E /* CryptoListView.swift */,
+				924C4AAF2E4D90150033297F /* CryptoListItemView.swift */,
+				924C4AAD2E4D8A340033297F /* CryptoListViewModel.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 		1FBEC5A12C940DE300732A9C /* CDC_InterviewTests */ = {
 			isa = PBXGroup;
 			children = (
+				924C4AB12E4D98B30033297F /* ListViewModelTests.swift */,
 				924C4AAB2E4D80930033297F /* FeatureFlagProviderTests.swift */,
 				924C49D62E4C89040033297F /* DependencyTests.swift */,
 				924C4A092E4CED230033297F /* LocalDataProviderTests.swift */,
@@ -466,12 +475,14 @@
 				924C4AAA2E4D7D430033297F /* DataSourceConfiguration.swift in Sources */,
 				4B9CB95B2CEB26F700279940 /* NumberFormatter.swift in Sources */,
 				1F96700A2C91A7E1004DB8FD /* AppDelegate.swift in Sources */,
-				4B1F48FC2CEDD3F200B7119E /* SwiftUIListViewController.swift in Sources */,
+				4B1F48FC2CEDD3F200B7119E /* CryptoListView.swift in Sources */,
 				1F96700C2C91A7E1004DB8FD /* SceneDelegate.swift in Sources */,
+				924C4AB02E4D90150033297F /* CryptoListItemView.swift in Sources */,
 				1F96701E2C91A806004DB8FD /* Model.swift in Sources */,
 				1F9670392C931DC1004DB8FD /* MarketsPriceUseCase.swift in Sources */,
 				924C4A0C2E4D00950033297F /* MarketsRepositoryProtocol.swift in Sources */,
 				924C4A0E2E4D00A80033297F /* MarketsRepository.swift in Sources */,
+				924C4AAE2E4D8A340033297F /* CryptoListViewModel.swift in Sources */,
 				1F96703B2C931FD3004DB8FD /* FeatureFlagProvider.swift in Sources */,
 				1F9670352C92C966004DB8FD /* SettingViewController.swift in Sources */,
 				1F96702D2C92C073004DB8FD /* Dependency.swift in Sources */,
@@ -487,6 +498,7 @@
 				924C4A992E4D6F1B0033297F /* DataSourceConfigurationTests.swift in Sources */,
 				924C4A9B2E4D71130033297F /* MarketsPriceUseCaseTests.swift in Sources */,
 				924C49D72E4C89040033297F /* DependencyTests.swift in Sources */,
+				924C4AB22E4D98B30033297F /* ListViewModelTests.swift in Sources */,
 				924C4A122E4D00CD0033297F /* MarketsRepositoryTests.swift in Sources */,
 				1FBEC5A32C940DE300732A9C /* CDC_InterviewTests.swift in Sources */,
 				924C4A0A2E4CED230033297F /* LocalDataProviderTests.swift in Sources */,
