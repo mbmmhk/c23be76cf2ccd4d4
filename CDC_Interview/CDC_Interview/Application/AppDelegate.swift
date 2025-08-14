@@ -7,11 +7,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Dependency.shared.register(USDPriceUseCase.self) { resolver in
-            return USDPriceUseCase()
+            return USDPriceUseCase(
+                repository: MarketsRepository(
+                    networkProvider: .local)
+            )
         }
-        
+
         Dependency.shared.register(AllPriceUseCase.self) { resolver in
-            return AllPriceUseCase()
+            return AllPriceUseCase(
+                repository: MarketsRepository(
+                    networkProvider: .local)
+            )
         }
         
         Dependency.shared.register(FeatureFlagProvider.self) { resolver in

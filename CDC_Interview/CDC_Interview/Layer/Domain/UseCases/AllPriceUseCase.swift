@@ -7,29 +7,22 @@ class AllPriceUseCase {
     static var shared: AllPriceUseCase = .init()
 
     private let disposeBag = DisposeBag()
+    private let repository: MarketsRepositoryProtocol
+
+    init() {
+        self.repository = MarketsRepository()
+    }
+
+    init(repository: MarketsRepositoryProtocol) {
+        self.repository = repository
+    }
 
     func fetchItems() -> Observable<[AllPrice.Price]> {
-        let itemsObservable = Observable<[AllPrice.Price]>.create { observer in
-            DispatchQueue.global()
-                .asyncAfter(deadline: .now() + 2) { // Note: add 2 seconds to simulate API response time
-                let path = Bundle.main.path(forResource: "allPrices", ofType: "json")!
-                guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)),
-                      let allPrices = try? JSONDecoder().decode(AllPrice.self, from: data) else {
-                    observer.onError(NSError(domain: "File Error", code: 404, userInfo: nil))
-                    return
-                }
-                DispatchQueue.main.async {
-                    observer.onNext(allPrices.data)
-                    observer.onCompleted()
-                }
-            }
-            return Disposables.create()
-        }
-        
-        return itemsObservable
+        return repository.asSingle { try await self.repository.fetchAllPrices() }
+            .asObservable()
     }
 
     func fetchItemsAsync() async throws -> [AllPrice.Price] {
-        try await fetchItems().take(1).asSingle().value
+        return try await repository.fetchAllPrices()
     }
 }
