@@ -6,15 +6,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Dependency.shared.register(USDPriceUseCase.self) { resolver in
-            return USDPriceUseCase(
-                repository: MarketsRepository(
-                    networkProvider: .local)
-            )
-        }
-
-        Dependency.shared.register(AllPriceUseCase.self) { resolver in
-            return AllPriceUseCase(
+        Dependency.shared.register(MarketsPriceUseCaseProtocol.self) { resolver in
+            return MarketsPriceUseCase(
                 repository: MarketsRepository(
                     networkProvider: .local)
             )
