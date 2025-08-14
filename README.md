@@ -144,3 +144,13 @@ Then I started working on detailView. Because it's UIKit and SwiftUI mixed progr
 This refactoring solved several fundamental problems of the original architecture. First was navigation logic coupling issue: the original SceneDelegate directly created and configured all pages, violating single responsibility principle - when needing to modify navigation flow, SceneDelegate had to be modified. By introducing Coordinator pattern, I separated navigation logic from app startup logic, each Coordinator only responsible for navigation management in its own domain. Second was SwiftUI navigation complexity issue: SwiftUI's NavigationView has some limitations in complex navigation scenarios, especially integration with UITabBarController. We adopted SwiftUI + UIKit hybrid architecture: using UIKit's UITabBarController and UINavigationController to manage navigation containers, using SwiftUI to build page content, maintaining both navigation stability and flexibility while enjoying SwiftUI's development efficiency. Third was testability issue: original navigation logic was scattered everywhere, very difficult to unit test. Now each Coordinator can be tested independently, I can verify navigation logic correctness without starting the entire UI. DetailViewModel's design reflects reactive programming advantages: when users switch feature flags in settings page, already opened detail pages automatically update price display format, this real-time response provides better user experience. The greatest value of this architecture is its extensibility: when needing to add new pages or modify navigation flow, only need to modify corresponding Coordinator without touching other components.
 
 ---
+
+### Refactor Model.swift with a protocol to unify interfaces
+
+**Changes I made:**
+Noticed that `USDPrice.Price` and `AllPrice.Price` looked pretty similar, so I created a `CryptoPriceItem` protocol for them to implement - now they have a unified interface. Also cleaned up the `Tag` enum by removing those hardcoded strings (Swift can figure them out automatically) and added `CaseIterable`. Threw in some convenience properties like `tagStrings` and direct price access with `usd`, `eur` properties.
+
+**Rationale behind implementation decisions:**
+The original code had duplication - two price structs that were very similar but no shared interface, plus unnecessary hardcoding in the enum. Using a protocol to unify the interface makes the code more reusable, and it's fully backward compatible so won't break existing stuff.
+
+---

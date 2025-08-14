@@ -11,7 +11,6 @@
 		1F96700C2C91A7E1004DB8FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96700B2C91A7E1004DB8FD /* SceneDelegate.swift */; };
 		1F9670132C91A7E3004DB8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9670122C91A7E3004DB8FD /* Assets.xcassets */; };
 		1F9670162C91A7E3004DB8FD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1F9670152C91A7E3004DB8FD /* Base */; };
-		1F96701E2C91A806004DB8FD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F96701D2C91A806004DB8FD /* Model.swift */; };
 		1F9670222C91A8D5004DB8FD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1F9670212C91A8D5004DB8FD /* RxCocoa */; };
 		1F9670242C91A8D5004DB8FD /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 1F9670232C91A8D5004DB8FD /* RxRelay */; };
 		1F9670262C91A8D5004DB8FD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1F9670252C91A8D5004DB8FD /* RxSwift */; };
@@ -53,6 +52,7 @@
 		924C4AD02E4DB9D10033297F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4ACF2E4DB9D10033297F /* AppCoordinator.swift */; };
 		924C4AD22E4DC17A0033297F /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AD12E4DC17A0033297F /* SettingsCoordinator.swift */; };
 		924C4AD42E4DC2300033297F /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AD32E4DC2300033297F /* AppCoordinatorTests.swift */; };
+		924C4AE82E4E21730033297F /* CryptoPriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924C4AE72E4E21730033297F /* CryptoPriceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		1F9670122C91A7E3004DB8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9670152C91A7E3004DB8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9670172C91A7E3004DB8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F96701D2C91A806004DB8FD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1F9670272C91A919004DB8FD /* usdPrices.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = usdPrices.json; sourceTree = "<group>"; };
 		1F96702C2C92C073004DB8FD /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		1F9670342C92C965004DB8FD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		924C4ACF2E4DB9D10033297F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		924C4AD12E4DC17A0033297F /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		924C4AD32E4DC2300033297F /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		924C4AE72E4E21730033297F /* CryptoPriceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPriceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,7 +266,7 @@
 		924C49DD2E4CC1830033297F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				1F96701D2C91A806004DB8FD /* Model.swift */,
+				924C4AE72E4E21730033297F /* CryptoPriceItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -522,10 +522,10 @@
 				4B1F48FC2CEDD3F200B7119E /* CryptoListView.swift in Sources */,
 				924C4AC62E4DB2740033297F /* DetailViewModel.swift in Sources */,
 				1F96700C2C91A7E1004DB8FD /* SceneDelegate.swift in Sources */,
+				924C4AE82E4E21730033297F /* CryptoPriceItem.swift in Sources */,
 				924C4AC22E4DB25E0033297F /* DetailView.swift in Sources */,
 				924C4AB02E4D90150033297F /* CryptoListItemView.swift in Sources */,
 				924C4AD02E4DB9D10033297F /* AppCoordinator.swift in Sources */,
-				1F96701E2C91A806004DB8FD /* Model.swift in Sources */,
 				1F9670392C931DC1004DB8FD /* MarketsPriceUseCase.swift in Sources */,
 				924C4ACE2E4DB9C60033297F /* CryptoListCoordinator.swift in Sources */,
 				924C4A0C2E4D00950033297F /* MarketsRepositoryProtocol.swift in Sources */,
