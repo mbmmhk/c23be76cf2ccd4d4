@@ -77,30 +77,26 @@ final class CryptoListViewModel: ObservableObject {
 
         loadingResult
             .drive(onNext: { [weak self] state in
-                Task { @MainActor in
-                    switch state {
-                    case .loading:
-                        self?.isLoading = true
-                        self?.errorMessage = nil
+                switch state {
+                case .loading:
+                    self?.isLoading = true
+                    self?.errorMessage = nil
 
-                    case .success(let items):
-                        self?.updateItems(items)
-                        self?.isLoading = false
-                        self?.errorMessage = nil
+                case .success(let items):
+                    self?.updateItems(items)
+                    self?.isLoading = false
+                    self?.errorMessage = nil
 
-                    case .error(let message):
-                        self?.isLoading = false
-                        self?.errorMessage = message
-                    }
+                case .error(let message):
+                    self?.isLoading = false
+                    self?.errorMessage = message
                 }
             })
             .disposed(by: disposeBag)
 
         showEURDriver
             .drive(onNext: { [weak self] showEUR in
-                Task { @MainActor in
-                    self?.showEURPrice = showEUR
-                }
+                self?.showEURPrice = showEUR
             })
             .disposed(by: disposeBag)
 
@@ -108,9 +104,7 @@ final class CryptoListViewModel: ObservableObject {
             .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] _ in
-                Task { @MainActor in
-                    self?.filterCurrentItems()
-                }
+                self?.filterCurrentItems()
             })
             .disposed(by: disposeBag)
     }
